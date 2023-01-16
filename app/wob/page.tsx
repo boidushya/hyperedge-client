@@ -35,7 +35,7 @@ const Section = (props: any) => {
 
 export default function Home() {
 	const [isHeadlineHovered, setIsHeadlineHovered] = useState(false);
-	const notify = () => toast('Application Deadline Extended To 31st Jan', {
+	const notify = () => toast('31 Jan, Application Deadline Extended', {
 		position: "top-right",
 		autoClose: 5000,
 		hideProgressBar: false,
