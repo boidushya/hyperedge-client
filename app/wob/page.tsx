@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Navbar from "@/Navbar";
 
 const Section = (props: any) => {
@@ -33,10 +35,39 @@ const Section = (props: any) => {
 
 export default function Home() {
 	const [isHeadlineHovered, setIsHeadlineHovered] = useState(false);
+	const notify = () => toast('31 Jan, 2023 Application Deadline Extended', {
+		position: "top-right",
+		autoClose: 5000,
+		hideProgressBar: false,
+		closeOnClick: true,
+		pauseOnHover: true,
+		draggable: true,
+		progress: undefined,
+		theme: "colored",
+	});
+
+	useEffect(() => {
+		window.onload = function () {
+			notify()
+		}
+	})
+
 
 	return (
 		<>
 			<Navbar />
+			<ToastContainer
+				position="top-right"
+				autoClose={5000}
+				hideProgressBar={false}
+				newestOnTop={false}
+				closeOnClick
+				rtl={false}
+				pauseOnFocusLoss
+				draggable
+				pauseOnHover
+				theme="colored"
+			/>
 			<section className="relative grid min-h-screen overflow-hidden place-items-center">
 				<div className="z-[1] relative flex flex-col md:items-center gap-4 p-16">
 					<div
